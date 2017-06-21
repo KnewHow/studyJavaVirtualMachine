@@ -1,0 +1,47 @@
+-verbose:gc -Xms20M -Xmx20M -Xmn10M -XX:+PrintGCDetails -XX:SurvivorRatio=8 
+-XX:+PrintTenuringDistribution -XX:MaxTenuringThreshold=1 -XX:+UseSerialGC
+
+from space 1024K,   0%
+the space 10240K,  45% used:allocation2(40%)+allocation(2.5%)
+
+
+[GC (Allocation Failure) [DefNew
+Desired survivor size 524288 bytes, new threshold 1 (max 1)
+- age   1:     529152 bytes,     529152 total
+: 4859K->516K(9216K), 0.0049339 secs] 4859K->4612K(19456K), 0.0050078 secs] [Times: user=0.01 sys=0.00, real=0.00 secs] 
+[GC (Allocation Failure) [DefNew
+Desired survivor size 524288 bytes, new threshold 1 (max 1)
+: 4612K->0K(9216K), 0.0008970 secs] 8708K->4611K(19456K), 0.0009452 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+Heap
+ def new generation   total 9216K, used 4260K [0x00000000fec00000, 0x00000000ff600000, 0x00000000ff600000)
+  eden space 8192K,  52% used [0x00000000fec00000, 0x00000000ff0290e0, 0x00000000ff400000)
+  from space 1024K,   0% used [0x00000000ff400000, 0x00000000ff400000, 0x00000000ff500000)
+  to   space 1024K,   0% used [0x00000000ff500000, 0x00000000ff500000, 0x00000000ff600000)
+ tenured generation   total 10240K, used 4611K [0x00000000ff600000, 0x0000000100000000, 0x0000000100000000)
+   the space 10240K,  45% used [0x00000000ff600000, 0x00000000ffa80f30, 0x00000000ffa81000, 0x0000000100000000)
+ Metaspace       used 2497K, capacity 4486K, committed 4864K, reserved 1056768K
+  class space    used 268K, capacity 386K, committed 512K, reserved 1048576K
+
+
+-verbose:gc -Xms20M -Xmx20M -Xmn10M -XX:+PrintGCDetails -XX:SurvivorRatio=8 
+-XX:+PrintTenuringDistribution  -XX:+UseSerialGC -XX:MaxTenuringThreshold=15
+
+the same as -XX:MaxTenuringThreshold=15,Why?//TODO 
+[GC (Allocation Failure) [DefNew
+Desired survivor size 524288 bytes, new threshold 1 (max 15)
+- age   1:     529152 bytes,     529152 total
+: 4859K->516K(9216K), 0.0118629 secs] 4859K->4612K(19456K), 0.0119177 secs] [Times: user=0.00 sys=0.02, real=0.01 secs] 
+[GC (Allocation Failure) [DefNew
+Desired survivor size 524288 bytes, new threshold 15 (max 15)
+: 4612K->0K(9216K), 0.0027190 secs] 8708K->4611K(19456K), 0.0028012 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+Heap
+ def new generation   total 9216K, used 4260K [0x00000000fec00000, 0x00000000ff600000, 0x00000000ff600000)
+  eden space 8192K,  52% used [0x00000000fec00000, 0x00000000ff0290e0, 0x00000000ff400000)
+  from space 1024K,   0% used [0x00000000ff400000, 0x00000000ff400000, 0x00000000ff500000)
+  to   space 1024K,   0% used [0x00000000ff500000, 0x00000000ff500000, 0x00000000ff600000)
+ tenured generation   total 10240K, used 4611K [0x00000000ff600000, 0x0000000100000000, 0x0000000100000000)
+   the space 10240K,  45% used [0x00000000ff600000, 0x00000000ffa80f30, 0x00000000ffa81000, 0x0000000100000000)
+ Metaspace       used 2496K, capacity 4486K, committed 4864K, reserved 1056768K
+  class space    used 268K, capacity 386K, committed 512K, reserved 1048576K
+
+  

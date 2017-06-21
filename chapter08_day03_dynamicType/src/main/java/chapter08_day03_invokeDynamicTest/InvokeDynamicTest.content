@@ -1,0 +1,187 @@
+Classfile /home/ygh/workspace/javaVirtualMachine/workspace/chapter08_day03_dynamicType/src/main/java/chapter08_day03_invokeDynamicTest/InvokeDynamicTest.class
+  Last modified Jun 20, 2017; size 2119 bytes
+  MD5 checksum 0a31df6fdf1f1a5712159b1689f0533b
+  Compiled from "InvokeDynamicTest.java"
+public class chapter08_day03_invokeDynamicTest.InvokeDynamicTest
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+    #1 = Methodref          #23.#51       // java/lang/Object."<init>":()V
+    #2 = Methodref          #19.#52       // chapter08_day03_invokeDynamicTest/InvokeDynamicTest.INDY_BootStrapMethod:()Ljava/lang/invoke/MethodHandle;
+    #3 = String             #53           // ygh
+    #4 = Methodref          #54.#55       // java/lang/invoke/MethodHandle.invoke:(Ljava/lang/String;)V
+    #5 = Fieldref           #56.#57       // java/lang/System.out:Ljava/io/PrintStream;
+    #6 = Class              #58           // java/lang/StringBuilder
+    #7 = Methodref          #6.#51        // java/lang/StringBuilder."<init>":()V
+    #8 = String             #59           // hello String:
+    #9 = Methodref          #6.#60        // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #10 = Methodref          #6.#61        // java/lang/StringBuilder.toString:()Ljava/lang/String;
+   #11 = Methodref          #62.#63       // java/io/PrintStream.println:(Ljava/lang/String;)V
+   #12 = Methodref          #40.#64       // java/lang/invoke/MethodHandles$Lookup.lookupClass:()Ljava/lang/Class;
+   #13 = Class              #65           // java/lang/invoke/ConstantCallSite
+   #14 = Methodref          #40.#66       // java/lang/invoke/MethodHandles$Lookup.findStatic:(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MethodHandle;
+   #15 = Methodref          #13.#67       // java/lang/invoke/ConstantCallSite."<init>":(Ljava/lang/invoke/MethodHandle;)V
+   #16 = String             #43           // (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+   #17 = Methodref          #68.#69       // java/lang/invoke/MethodType.fromMethodDescriptorString:(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/invoke/MethodType;
+   #18 = Methodref          #70.#71       // java/lang/invoke/MethodHandles.lookup:()Ljava/lang/invoke/MethodHandles$Lookup;
+   #19 = Class              #72           // chapter08_day03_invokeDynamicTest/InvokeDynamicTest
+   #20 = String             #39           // BootStrapMethod
+   #21 = Methodref          #19.#73       // chapter08_day03_invokeDynamicTest/InvokeDynamicTest.MT_BootStrapMethod:()Ljava/lang/invoke/MethodType;
+   #22 = Methodref          #19.#74       // chapter08_day03_invokeDynamicTest/InvokeDynamicTest.MH_BootStrapMethod:()Ljava/lang/invoke/MethodHandle;
+   #23 = Class              #75           // java/lang/Object
+   #24 = String             #37           // testMethod
+   #25 = String             #38           // (Ljava/lang/String;)V
+   #26 = Methodref          #54.#76       // java/lang/invoke/MethodHandle.invokeWithArguments:([Ljava/lang/Object;)Ljava/lang/Object;
+   #27 = Class              #77           // java/lang/invoke/CallSite
+   #28 = Methodref          #27.#78       // java/lang/invoke/CallSite.dynamicInvoker:()Ljava/lang/invoke/MethodHandle;
+   #29 = Utf8               <init>
+   #30 = Utf8               ()V
+   #31 = Utf8               Code
+   #32 = Utf8               LineNumberTable
+   #33 = Utf8               main
+   #34 = Utf8               ([Ljava/lang/String;)V
+   #35 = Utf8               Exceptions
+   #36 = Class              #79           // java/lang/Throwable
+   #37 = Utf8               testMethod
+   #38 = Utf8               (Ljava/lang/String;)V
+   #39 = Utf8               BootStrapMethod
+   #40 = Class              #80           // java/lang/invoke/MethodHandles$Lookup
+   #41 = Utf8               Lookup
+   #42 = Utf8               InnerClasses
+   #43 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+   #44 = Utf8               MT_BootStrapMethod
+   #45 = Utf8               ()Ljava/lang/invoke/MethodType;
+   #46 = Utf8               MH_BootStrapMethod
+   #47 = Utf8               ()Ljava/lang/invoke/MethodHandle;
+   #48 = Utf8               INDY_BootStrapMethod
+   #49 = Utf8               SourceFile
+   #50 = Utf8               InvokeDynamicTest.java
+   #51 = NameAndType        #29:#30       // "<init>":()V
+   #52 = NameAndType        #48:#47       // INDY_BootStrapMethod:()Ljava/lang/invoke/MethodHandle;
+   #53 = Utf8               ygh
+   #54 = Class              #81           // java/lang/invoke/MethodHandle
+   #55 = NameAndType        #82:#38       // invoke:(Ljava/lang/String;)V
+   #56 = Class              #83           // java/lang/System
+   #57 = NameAndType        #84:#85       // out:Ljava/io/PrintStream;
+   #58 = Utf8               java/lang/StringBuilder
+   #59 = Utf8               hello String:
+   #60 = NameAndType        #86:#87       // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #61 = NameAndType        #88:#89       // toString:()Ljava/lang/String;
+   #62 = Class              #90           // java/io/PrintStream
+   #63 = NameAndType        #91:#38       // println:(Ljava/lang/String;)V
+   #64 = NameAndType        #92:#93       // lookupClass:()Ljava/lang/Class;
+   #65 = Utf8               java/lang/invoke/ConstantCallSite
+   #66 = NameAndType        #94:#95       // findStatic:(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MethodHandle;
+   #67 = NameAndType        #29:#96       // "<init>":(Ljava/lang/invoke/MethodHandle;)V
+   #68 = Class              #97           // java/lang/invoke/MethodType
+   #69 = NameAndType        #98:#99       // fromMethodDescriptorString:(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/invoke/MethodType;
+   #70 = Class              #100          // java/lang/invoke/MethodHandles
+   #71 = NameAndType        #101:#102     // lookup:()Ljava/lang/invoke/MethodHandles$Lookup;
+   #72 = Utf8               chapter08_day03_invokeDynamicTest/InvokeDynamicTest
+   #73 = NameAndType        #44:#45       // MT_BootStrapMethod:()Ljava/lang/invoke/MethodType;
+   #74 = NameAndType        #46:#47       // MH_BootStrapMethod:()Ljava/lang/invoke/MethodHandle;
+   #75 = Utf8               java/lang/Object
+   #76 = NameAndType        #103:#104     // invokeWithArguments:([Ljava/lang/Object;)Ljava/lang/Object;
+   #77 = Utf8               java/lang/invoke/CallSite
+   #78 = NameAndType        #105:#47      // dynamicInvoker:()Ljava/lang/invoke/MethodHandle;
+   #79 = Utf8               java/lang/Throwable
+   #80 = Utf8               java/lang/invoke/MethodHandles$Lookup
+   #81 = Utf8               java/lang/invoke/MethodHandle
+   #82 = Utf8               invoke
+   #83 = Utf8               java/lang/System
+   #84 = Utf8               out
+   #85 = Utf8               Ljava/io/PrintStream;
+   #86 = Utf8               append
+   #87 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #88 = Utf8               toString
+   #89 = Utf8               ()Ljava/lang/String;
+   #90 = Utf8               java/io/PrintStream
+   #91 = Utf8               println
+   #92 = Utf8               lookupClass
+   #93 = Utf8               ()Ljava/lang/Class;
+   #94 = Utf8               findStatic
+   #95 = Utf8               (Ljava/lang/Class;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MethodHandle;
+   #96 = Utf8               (Ljava/lang/invoke/MethodHandle;)V
+   #97 = Utf8               java/lang/invoke/MethodType
+   #98 = Utf8               fromMethodDescriptorString
+   #99 = Utf8               (Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/invoke/MethodType;
+  #100 = Utf8               java/lang/invoke/MethodHandles
+  #101 = Utf8               lookup
+  #102 = Utf8               ()Ljava/lang/invoke/MethodHandles$Lookup;
+  #103 = Utf8               invokeWithArguments
+  #104 = Utf8               ([Ljava/lang/Object;)Ljava/lang/Object;
+  #105 = Utf8               dynamicInvoker
+{
+  public chapter08_day03_invokeDynamicTest.InvokeDynamicTest();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 14: 0
+
+  public static void main(java.lang.String[]) throws java.lang.Throwable;
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: invokestatic  #2                  // Method INDY_BootStrapMethod:()Ljava/lang/invoke/MethodHandle;
+         3: ldc           #3                  // String ygh
+         5: invokevirtual #4                  // Method java/lang/invoke/MethodHandle.invoke:(Ljava/lang/String;)V
+         8: return
+      LineNumberTable:
+        line 17: 0
+        line 18: 8
+    Exceptions:
+      throws java.lang.Throwable
+
+  public static void testMethod(java.lang.String);
+    descriptor: (Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=3, locals=1, args_size=1
+         0: getstatic     #5                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: new           #6                  // class java/lang/StringBuilder
+         6: dup
+         7: invokespecial #7                  // Method java/lang/StringBuilder."<init>":()V
+        10: ldc           #8                  // String hello String:
+        12: invokevirtual #9                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        15: aload_0
+        16: invokevirtual #9                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        19: invokevirtual #10                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        22: invokevirtual #11                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        25: return
+      LineNumberTable:
+        line 21: 0
+        line 22: 25
+
+  public static java.lang.invoke.CallSite BootStrapMethod(java.lang.invoke.MethodHandles$Lookup, java.lang.String, java.lang.invoke.MethodType) throws java.lang.Throwable;
+    descriptor: (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=6, locals=4, args_size=3
+         0: aload_0
+         1: invokevirtual #12                 // Method java/lang/invoke/MethodHandles$Lookup.lookupClass:()Ljava/lang/Class;
+         4: astore_3
+         5: new           #13                 // class java/lang/invoke/ConstantCallSite
+         8: dup
+         9: aload_0
+        10: aload_3
+        11: aload_1
+        12: aload_2
+        13: invokevirtual #14                 // Method java/lang/invoke/MethodHandles$Lookup.findStatic:(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MethodHandle;
+        16: invokespecial #15                 // Method java/lang/invoke/ConstantCallSite."<init>":(Ljava/lang/invoke/MethodHandle;)V
+        19: areturn
+      LineNumberTable:
+        line 38: 0
+        line 39: 5
+    Exceptions:
+      throws java.lang.Throwable
+}
+SourceFile: "InvokeDynamicTest.java"
+InnerClasses:
+     public static final #41= #40 of #70; //Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles

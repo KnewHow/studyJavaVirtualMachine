@@ -1,0 +1,37 @@
+Class ConstantCallSite
+
+    java.lang.Object
+        java.lang.invoke.CallSite
+            java.lang.invoke.ConstantCallSite 
+
+
+    public class ConstantCallSite
+    extends CallSite
+
+    A ConstantCallSite is a CallSite whose target调用者) is permanent, and can never be changed. An invokedynamic 
+    instruction linked to a ConstantCallSite is permanently bound to the call site's target.
+    
+
+Construction:
+	public ConstantCallSite(MethodHandle target)
+
+		Creates a call site with a permanent target.
+		
+		Parameters:
+		    target - the target to be permanently associated with this call site
+		Throws:
+		    NullPointerException - if the proposed target is null 
+
+Methods:
+
+public final MethodHandle dynamicInvoker()
+
+	Returns this call site's permanent target. Since that target will never change, this is a correct implementation
+	of CallSite.dynamicInvoker.
+	
+	Specified by:
+	    dynamicInvoker in class CallSite
+	Returns:
+	    the immutable(不可变的) linkage state of this call site, a constant method handle
+	Throws:
+	    IllegalStateException - if the ConstantCallSite constructor has not completed 		    

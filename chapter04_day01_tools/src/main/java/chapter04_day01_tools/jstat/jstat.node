@@ -1,0 +1,79 @@
+jstat(1)                                                      Monitoring Tools                                                     jstat(1)
+
+NAME
+       jstat - Monitors Java Virtual Machine (JVM) statistics. This command is experimental and unsupported.
+
+SYNOPSIS
+           jstat [ generalOption | outputOptions vmid [ interval[s|ms] [ count ] ]
+
+       generalOption
+           A single general command-line option -help or -options. See General Options.
+
+       outputOptions
+           One or more output options that consist of a single statOption, plus any of the -t, -h, and -J options.
+           See Output Options.
+
+       vmid
+           Virtual machine identifier, which is a string that indicates the target JVM. The general syntax is 
+           the following:
+
+               [protocol:][//]lvmid[@hostname[:port]/servername]
+
+           The syntax of the vmid string corresponds to the syntax of a URI. The vmid string can vary(不同) from
+           a simple integer that represents a local JVM to a more complex construction that specifies a communications
+           protocol, port number, and other implementation-specific values. See Virtual Machine Identifier.
+
+       interval [s|ms]
+           Sampling interval in the specified units, seconds (s) or milliseconds (ms). Default units are milliseconds. Must be a positive
+           integer. When specified, the jstat command produces its output at each interval.
+
+       count
+           Number of samples to display. The default value is infinity which causes the jstat command to display statistics until the
+           target JVM terminates or the jstat command is terminated. This value must be a positive integer.
+
+DESCRIPTION
+       The jstat command displays performance statistics for an instrumented Java HotSpot VM. The target JVM is identified by its virtual
+       machine identifier, or vmid option.
+       
+       
+       -statOption
+           Determines the statistics information the jstat command displays. The following lists the available options. Use the -options
+           general option to display the list of options for a particular platform installation. See Stat Options and Output.
+
+           class: Displays statistics about the behavior of the class loader.
+
+           compiler: Displays statistics about the behavior of the Java HotSpot VM Just-in-Time compiler.
+
+           gc: Displays statistics about the behavior of the garbage collected heap.
+
+           gccapacity: Displays statistics about the capacities of the generations and their corresponding spaces.
+
+           gccause: Displays a summary about garbage collection statistics (same as -gcutil), with the cause of the last and current (when
+           applicable) garbage collection events.
+
+           gcnew: Displays statistics of the behavior of the new generation.
+
+           gcnewcapacity: Displays statistics about the sizes of the new generations and its corresponding spaces.
+
+           gcold: Displays statistics about the behavior of the old generation and metaspace statistics.
+
+           gcoldcapacity: Displays statistics about the sizes of the old generation.
+
+           gcmetacapacity: Displays statistics about the sizes of the metaspace.
+
+           gcutil: Displays a summary about garbage collection statistics.
+
+           printcompilation: Displays Java HotSpot VM compilation method statistics.
+           
+           
+Examples:
+
+jstack  jstat   jstatd  
+[root@nfs_service ~]# jstat -gcutil 3626
+  S0(Survovor0 Size)     S1(Survovor1 Size)     E(Eden Size)      O(Old Size)      P(Permanent Size)     YGC(Young GC(Minor GC) times)     YGCT(YGC time second)    FGC(Full GC times)    FGCT（FGC time）     GCT（GC total time second）   
+  0.00  				10.99  						31.92  			61.43  			99.59    					129    							0.500    					6   		      0.664    					1.164
+  
+  
+  
+  S0     S1     E      O      P     YGC     YGCT    FGC    FGCT     GCT   
+  0.00  10.99  31.92  61.43  99.59    129    0.500     6    0.664    1.164

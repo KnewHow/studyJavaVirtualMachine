@@ -1,0 +1,125 @@
+
+Young Generation MaxSize = 10MB*(8/(1+8))=9216K
+
+In Serial+Serial Old:
+
+principle:
+index	allocation size(MB) 	Young Generation(MB)		Old Generation(MB)
+0			0							0							0
+1			2							2							0
+2			2							4							0
+3			2							6							0
+4			4						（not enough）				    0
+						GC				0		---->（6）   	    6			
+4			4							4							6
+		
+details:			
+[GC (Allocation Failure) [DefNew: 6815K->260K(9216K)(6MB moved from young generation to Old generation)
+, 0.0295849 secs] 6815K->6404K(19456K)（physical memory is still don't change)
+）, 0.0298450 secs] [Times: user=0.00 sys=0.03, real=0.03 secs] 
+Heap
+//最终young generation status
+ def new generation   total 9216K, used 4439K [0x00000000fec00000, 0x00000000ff600000, 0x00000000ff600000)
+  eden space 8192K,  51% used [0x00000000fec00000, 0x00000000ff014930, 0x00000000ff400000)
+  from space 1024K,  25% used [0x00000000ff500000, 0x00000000ff541370, 0x00000000ff600000)
+  to   space 1024K,   0% used [0x00000000ff400000, 0x00000000ff400000, 0x00000000ff500000)
+ tenured generation   total 10240K, used 6144K [0x00000000ff600000, 0x0000000100000000, 0x0000000100000000)
+   the space 10240K,  60% used [0x00000000ff600000, 0x00000000ffc00030, 0x00000000ffc00200, 0x0000000100000000)
+ Metaspace       used 2499K, capacity 4486K, committed 4864K, reserved 1056768K
+  class space    used 268K, capacity 386K, committed 512K, reserved 1048576K
+
+
+
+Use Parallel Scavenge +Parallel Old(JKD1.8 default):
+index	allocation size(MB) 	Young Generation(MB)		Old Generation(MB)
+0			0							0							0
+1			2							2							0
+2			2							4							0
+3			2							6							0
+4			4						（not enough,move 4MB,don't all）0				    
+						GC				2		----> (4)  			4			
+4			4							6							4
+details:
+Heap
+ PSYoungGen      total 9216K, used 6816K [0x00000000ff600000, 0x0000000100000000, 0x0000000100000000)
+#there are 8MB in young generation
+  eden space 8192K, 83% used [0x00000000ff600000,0x00000000ffca80c8,0x00000000ffe00000)
+  from space 1024K, 0% used [0x00000000fff00000,0x00000000fff00000,0x0000000100000000)
+  to   space 1024K, 0% used [0x00000000ffe00000,0x00000000ffe00000,0x00000000fff00000)
+#threr are 4MB in old generation
+ ParOldGen       total 10240K, used 4096K [0x00000000fec00000, 0x00000000ff600000, 0x00000000ff600000)
+  object space 10240K, 40% used [0x00000000fec00000,0x00000000ff000010,0x00000000ff600000)
+ Metaspace       used 2496K, capacity 4486K, committed 4864K, reserved 1056768K
+  class space    used 268K, capacity 386K, committed 512K, reserved 1048576K
+
+
+
+Use ParNwe+CMS(Serial Old):
+principle:
+index	allocation size(MB) 	Young Generation(MB)		Old Generation(MB)
+0			0							0							0
+1			2							2							0
+2			2							4							0
+3			2							6							0
+4			4						（not enough）				    0
+						GC				0		---->（6）   	    6			
+4			4							4							6
+
+Details:
+[GC (Allocation Failure) [ParNew: 6651K->277K(9216K), 0.0031356 secs] 6651K->6424K(19456K), 0.0031979 secs] [Times: user=0.00 sys=0.00, real=0.01 secs] 
+Heap
+ par new generation   total 9216K, used 4538K [0x00000000fec00000, 0x00000000ff600000, 0x00000000ff600000)
+  eden space 8192K,  52% used [0x00000000fec00000, 0x00000000ff0290e0, 0x00000000ff400000)
+  from space 1024K,  27% used [0x00000000ff500000, 0x00000000ff5457c8, 0x00000000ff600000)
+  to   space 1024K,   0% used [0x00000000ff400000, 0x00000000ff400000, 0x00000000ff500000)
+ concurrent mark-sweep generation total 10240K, used 6146K [0x00000000ff600000, 0x0000000100000000, 0x0000000100000000)
+ Metaspace       used 2497K, capacity 4486K, committed 4864K, reserved 1056768K
+  class space    used 268K, capacity 386K, committed 512K, reserved 1048576K
+  
+
+Use G1:
+Principle:
+[Eden: 1024.0K(10.0M)->0.0B(9216.0K) Survivors: 0.0B->1024.0K Heap: 6569.7K(20.0M)->6480.1K(20.0M)]
+each region seems has 1024K
+region1	region2	region3	region4	Survivor1 Survivor2
+	1		2		3			...
+[GC pause (G1 Humongous Allocation) (young) (initial-mark), 0.0298934 secs]
+   [Parallel Time: 24.0 ms, GC Workers: 4]
+      [GC Worker Start (ms): Min: 178.6, Avg: 178.7, Max: 179.2, Diff: 0.6]
+      [Ext Root Scanning (ms): Min: 0.0, Avg: 10.8, Max: 22.8, Diff: 22.8, Sum: 43.2]
+      [Update RS (ms): Min: 0.0, Avg: 0.0, Max: 0.0, Diff: 0.0, Sum: 0.0]
+         [Processed Buffers: Min: 0, Avg: 0.0, Max: 0, Diff: 0, Sum: 0]
+      [Scan RS (ms): Min: 0.0, Avg: 0.0, Max: 0.0, Diff: 0.0, Sum: 0.0]
+      [Code Root Scanning (ms): Min: 0.0, Avg: 0.0, Max: 0.0, Diff: 0.0, Sum: 0.0]
+      [Object Copy (ms): Min: 0.0, Avg: 1.1, Max: 3.6, Diff: 3.6, Sum: 4.5]
+      [Termination (ms): Min: 0.0, Avg: 11.2, Max: 22.3, Diff: 22.3, Sum: 44.7]
+         [Termination Attempts: Min: 1, Avg: 1.8, Max: 4, Diff: 3, Sum: 7]
+      [GC Worker Other (ms): Min: 0.0, Avg: 0.2, Max: 0.6, Diff: 0.6, Sum: 0.7]
+      [GC Worker Total (ms): Min: 22.8, Avg: 23.3, Max: 23.4, Diff: 0.6, Sum: 93.1]
+      [GC Worker End (ms): Min: 202.0, Avg: 202.0, Max: 202.0, Diff: 0.0]
+   [Code Root Fixup: 0.0 ms]
+   [Code Root Purge: 0.0 ms]
+   [Clear CT: 1.0 ms]
+   [Other: 4.9 ms]
+      [Choose CSet: 0.0 ms]
+      [Ref Proc: 3.0 ms]
+      [Ref Enq: 0.0 ms]
+      [Redirty Cards: 1.6 ms]
+      [Humongous Register: 0.0 ms]
+      [Humongous Reclaim: 0.0 ms]
+      [Free CSet: 0.0 ms]
+   [Eden: 1024.0K(10.0M)->0.0B(9216.0K) Survivors: 0.0B->1024.0K Heap: 6569.7K(20.0M)->6480.1K(20.0M)]
+ [Times: user=0.04 sys=0.01, real=0.04 secs] 
+[GC concurrent-root-region-scan-start]
+[GC concurrent-root-region-scan-end, 0.0027645 secs]
+[GC concurrent-mark-start]
+[GC concurrent-mark-end, 0.0000968 secs]
+[GC remark [Finalize Marking, 0.0038732 secs] [GC ref-proc, 0.0000659 secs] [Unloading, 0.0012384 secs], 0.0054667 secs]
+ [Times: user=0.01 sys=0.00, real=0.01 secs] 
+[GC cleanup 10M->10M(20M), 0.0007799 secs]
+ [Times: user=0.00 sys=0.00, real=0.00 secs] 
+Heap
+ garbage-first heap   total 20480K, used 10576K [0x00000000fec00000, 0x00000000fed000a0, 0x0000000100000000)
+  region size 1024K, 2 young (2048K), 1 survivors (1024K)
+ Metaspace       used 2496K, capacity 4486K, committed 4864K, reserved 1056768K
+  class space    used 268K, capacity 386K, committed 512K, reserved 1048576K

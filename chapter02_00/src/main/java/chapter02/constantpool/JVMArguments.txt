@@ -1,0 +1,35 @@
+
+-XX:PermSize=size
+       Sets the space (in bytes) allocated to the permanent generation
+       that triggers a garbage collection if it is exceeded. This option
+       was deprecated in JDK 8, and superseded by the -XX:MetaspaceSize
+       option.
+       
+
+
+-XX:MaxPermSize=size
+       Sets the maximum permanent generation space size (in bytes). This
+       option was deprecated in JDK 8, and superseded by the
+       -XX:MaxMetaspaceSize option.
+
+
+-XX:MetaspaceSize=size
+       Sets the size of the allocated class metadata(元数据) space that will
+       trigger(触发) a garbage collection the first time it is exceeded(超过). This
+       threshold(阀值) for a garbage collection is increased or decreased
+       depending on the amount of metadata used. The default size depends
+       on the platform(平台).
+  
+-XX:MaxMetaspaceSize=size
+       Sets the maximum amount of native memory that can be allocated for
+       class metadata. By default, the size is not limited. The amount of
+       metadata for an application depends on the application itself,
+       other running applications, and the amount of memory available on
+       the system.
+
+       The following example shows how to set the maximum class metadata
+       size to 256 MB:
+
+           -XX:MaxMetaspaceSize=256m
+
+

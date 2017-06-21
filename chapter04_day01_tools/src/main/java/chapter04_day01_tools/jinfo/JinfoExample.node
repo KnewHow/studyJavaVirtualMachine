@@ -1,0 +1,6 @@
+We can use jinfo to view JVM arguments, For examples:
+ygh@ygh-ubuntu:~$ jinfo -flag CMSInitiatingOccupancyFraction 2874
+-XX:CMSInitiatingOccupancyFraction=-1
+
+We also can command "java -XX:+PrintFlagsFinal" to view JVM default
+arguments

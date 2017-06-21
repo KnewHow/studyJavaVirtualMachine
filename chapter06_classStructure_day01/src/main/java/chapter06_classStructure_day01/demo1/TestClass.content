@@ -1,0 +1,54 @@
+Classfile /home/ygh/workspace/javaVirtualMachine/workspace/chapter06_classStructure_day01/src/main/java/chapter06_classStructure_day01/demo1/TestClass.class
+  Last modified Jun 16, 2017; size 312 bytes
+  MD5 checksum 37c9f39d073c324b998502493ddbb5db
+  Compiled from "TestClass.java"
+public class chapter06_classStructure_day01.demo1.TestClass
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #4.#15         // java/lang/Object."<init>":()V
+   #2 = Fieldref           #3.#16         // chapter06_classStructure_day01/demo1/TestClass.m:I
+   #3 = Class              #17            // chapter06_classStructure_day01/demo1/TestClass
+   #4 = Class              #18            // java/lang/Object
+   #5 = Utf8               m
+   #6 = Utf8               I
+   #7 = Utf8               <init>
+   #8 = Utf8               ()V		// void init()
+   #9 = Utf8               Code
+  #10 = Utf8               LineNumberTable
+  #11 = Utf8               inc
+  #12 = Utf8               ()I		//int inc()
+  #13 = Utf8               SourceFile
+  #14 = Utf8               TestClass.java
+  #15 = NameAndType        #7:#8          // "<init>":()V
+  #16 = NameAndType        #5:#6          // m:I
+  #17 = Utf8               chapter06_classStructure_day01/demo1/TestClass
+  #18 = Utf8               java/lang/Object
+// attribute_info
+{
+  public chapter06_classStructure_day01.demo1.TestClass();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0			     //将第0个Slot中为reference的类型的本地变量推送到栈操作数栈顶
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return			     //返回值为void
+      LineNumberTable:
+        line 8: 0
+
+  public int inc();
+    descriptor: ()I
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=1, args_size=1	  //这个参数代表指向本类实例对象this,如果是static方法，就没有这个参数
+         0: aload_0
+         1: getfield      #2                  // Field m:I
+         4: iconst_1
+         5: iadd
+         6: ireturn
+      LineNumberTable:
+        line 12: 0
+}
+SourceFile: "TestClass.java"

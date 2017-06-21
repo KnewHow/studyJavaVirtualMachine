@@ -1,0 +1,80 @@
+Classfile /home/ygh/workspace/javaVirtualMachine/workspace/chapter08_day02_reload/src/main/java/chapter08_day02_reload/DynamicDispatch.class
+  Last modified Jun 19, 2017; size 489 bytes
+  MD5 checksum 95e0b67e548fc34c32681441ff3db2f6
+  Compiled from "DynamicDispatch.java"
+public class chapter08_day02_reload.DynamicDispatch
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #8.#17         // java/lang/Object."<init>":()V
+   #2 = Class              #18            // chapter08_day02_reload/Man
+   #3 = Methodref          #2.#17         // chapter08_day02_reload/Man."<init>":()V
+   #4 = Class              #19            // chapter08_day02_reload/Woman
+   #5 = Methodref          #4.#17         // chapter08_day02_reload/Woman."<init>":()V
+   #6 = Methodref          #20.#21        // chapter08_day02_reload/Human.sayHello:()V
+   #7 = Class              #22            // chapter08_day02_reload/DynamicDispatch
+   #8 = Class              #23            // java/lang/Object
+   #9 = Utf8               <init>
+  #10 = Utf8               ()V
+  #11 = Utf8               Code
+  #12 = Utf8               LineNumberTable
+  #13 = Utf8               main
+  #14 = Utf8               ([Ljava/lang/String;)V
+  #15 = Utf8               SourceFile
+  #16 = Utf8               DynamicDispatch.java
+  #17 = NameAndType        #9:#10         // "<init>":()V
+  #18 = Utf8               chapter08_day02_reload/Man
+  #19 = Utf8               chapter08_day02_reload/Woman
+  #20 = Class              #24            // chapter08_day02_reload/Human
+  #21 = NameAndType        #25:#10        // sayHello:()V
+  #22 = Utf8               chapter08_day02_reload/DynamicDispatch
+  #23 = Utf8               java/lang/Object
+  #24 = Utf8               chapter08_day02_reload/Human
+  #25 = Utf8               sayHello
+{
+  public chapter08_day02_reload.DynamicDispatch();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 8: 0
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=3, args_size=1
+         0: new           #2                  // class chapter08_day02_reload/Man
+         3: dup
+         4: invokespecial #3                  // Method chapter08_day02_reload/Man."<init>":()V
+         7: astore_1
+         8: new           #4                  // class chapter08_day02_reload/Woman
+        11: dup
+        12: invokespecial #5                  // Method chapter08_day02_reload/Woman."<init>":()V
+        15: astore_2
+        16: aload_1
+        17: invokevirtual #6                  // Method chapter08_day02_reload/Human.sayHello:()V
+        20: aload_2
+        21: invokevirtual #6                  // Method chapter08_day02_reload/Human.sayHello:()V
+        24: new           #4                  // class chapter08_day02_reload/Woman
+        27: dup
+        28: invokespecial #5                  // Method chapter08_day02_reload/Woman."<init>":()V
+        31: astore_1
+        32: aload_1
+        33: invokevirtual #6                  // Method chapter08_day02_reload/Human.sayHello:()V
+        36: return
+      LineNumberTable:
+        line 11: 0
+        line 12: 8
+        line 13: 16
+        line 14: 20
+        line 15: 24
+        line 16: 32
+        line 17: 36
+}
+SourceFile: "DynamicDispatch.java"

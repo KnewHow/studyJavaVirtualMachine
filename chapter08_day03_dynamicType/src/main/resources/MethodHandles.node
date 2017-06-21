@@ -1,0 +1,23 @@
+
+compact1, compact2, compact3
+java.lang.invoke
+Class MethodHandles
+
+    java.lang.Object
+        java.lang.invoke.MethodHandles 
+
+
+    public class MethodHandles
+    extends Object
+
+    This class consists exclusively(仅仅) of static methods that operate on or return method handles. They fall into(分成) 
+    several categories:
+        Lookup methods which help create method handles for methods and fields.
+        Combinator methods, which combine or transform(预先) pre-existing method handles into new ones.
+        Other factory methods to create method handles that emulate(仿真) other common JVM operations or control flow 
+        patterns. 
+
+    Since:
+        1.7
+
+

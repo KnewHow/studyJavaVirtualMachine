@@ -1,0 +1,126 @@
+Classfile /home/ygh/workspace/javaVirtualMachine/workspace/chapter08_day01_VMStack/src/main/java/chapter08_day01_staticDispatchDemo/Demo1.class
+  Last modified Jun 18, 2017; size 899 bytes
+  MD5 checksum 86077b4c9679c6cf74a34f9ab2362cde
+  Compiled from "Demo1.java"
+public class chapter08_day01_staticDispatchDemo.Demo1
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Methodref          #11.#24        // java/lang/Object."<init>":()V
+   #2 = Class              #25            // chapter08_day01_staticDispatchDemo/Man
+   #3 = Methodref          #2.#24         // chapter08_day01_staticDispatchDemo/Man."<init>":()V
+   #4 = Class              #26            // chapter08_day01_staticDispatchDemo/Woman
+   #5 = Methodref          #4.#24         // chapter08_day01_staticDispatchDemo/Woman."<init>":()V
+   #6 = Methodref          #10.#27        // chapter08_day01_staticDispatchDemo/Demo1.sayHello:(Lchapter08_day01_staticDispatchDemo/Human;)V
+   #7 = Fieldref           #28.#29        // java/lang/System.out:Ljava/io/PrintStream;
+   #8 = String             #30            // human say hello!
+   #9 = Methodref          #31.#32        // java/io/PrintStream.println:(Ljava/lang/String;)V
+  #10 = Class              #33            // chapter08_day01_staticDispatchDemo/Demo1
+  #11 = Class              #34            // java/lang/Object
+  #12 = Utf8               <init>
+  #13 = Utf8               ()V
+  #14 = Utf8               Code
+  #15 = Utf8               LineNumberTable
+  #16 = Utf8               main
+  #17 = Utf8               ([Ljava/lang/String;)V
+  #18 = Utf8               sayHello
+  #19 = Utf8               (Lchapter08_day01_staticDispatchDemo/Human;)V
+  #20 = Utf8               (Lchapter08_day01_staticDispatchDemo/Man;)V
+  #21 = Utf8               (Lchapter08_day01_staticDispatchDemo/Woman;)V
+  #22 = Utf8               SourceFile
+  #23 = Utf8               Demo1.java
+  #24 = NameAndType        #12:#13        // "<init>":()V
+  #25 = Utf8               chapter08_day01_staticDispatchDemo/Man
+  #26 = Utf8               chapter08_day01_staticDispatchDemo/Woman
+  #27 = NameAndType        #18:#19        // sayHello:(Lchapter08_day01_staticDispatchDemo/Human;)V
+  #28 = Class              #35            // java/lang/System
+  #29 = NameAndType        #36:#37        // out:Ljava/io/PrintStream;
+  #30 = Utf8               human say hello!
+  #31 = Class              #38            // java/io/PrintStream
+  #32 = NameAndType        #39:#40        // println:(Ljava/lang/String;)V
+  #33 = Utf8               chapter08_day01_staticDispatchDemo/Demo1
+  #34 = Utf8               java/lang/Object
+  #35 = Utf8               java/lang/System
+  #36 = Utf8               out
+  #37 = Utf8               Ljava/io/PrintStream;
+  #38 = Utf8               java/io/PrintStream
+  #39 = Utf8               println
+  #40 = Utf8               (Ljava/lang/String;)V
+{
+  public chapter08_day01_staticDispatchDemo.Demo1();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 8: 0
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=3, args_size=1
+         0: new           #2                  // class chapter08_day01_staticDispatchDemo/Man
+         3: dup
+         4: invokespecial #3                  // Method chapter08_day01_staticDispatchDemo/Man."<init>":()V
+         7: astore_1
+         8: new           #4                  // class chapter08_day01_staticDispatchDemo/Woman
+        11: dup
+        12: invokespecial #5                  // Method chapter08_day01_staticDispatchDemo/Woman."<init>":()V
+        15: astore_2
+        16: aload_1
+        17: invokestatic  #6                  // Method sayHello:(Lchapter08_day01_staticDispatchDemo/Human;)V
+        20: aload_2
+        21: invokestatic  #6                  // Method sayHello:(Lchapter08_day01_staticDispatchDemo/Human;)V
+        24: return
+      LineNumberTable:
+        line 11: 0
+        line 12: 8
+        line 13: 16
+        line 14: 20
+        line 26: 24
+
+  public static void sayHello(chapter08_day01_staticDispatchDemo.Human);
+    descriptor: (Lchapter08_day01_staticDispatchDemo/Human;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #8                  // String human say hello!
+         5: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         8: return
+      LineNumberTable:
+        line 34: 0
+        line 35: 8
+
+  public static void sayHello(chapter08_day01_staticDispatchDemo.Man);
+    descriptor: (Lchapter08_day01_staticDispatchDemo/Man;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #8                  // String human say hello!
+         5: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         8: return
+      LineNumberTable:
+        line 43: 0
+        line 44: 8
+
+  public static void sayHello(chapter08_day01_staticDispatchDemo.Woman);
+    descriptor: (Lchapter08_day01_staticDispatchDemo/Woman;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         3: ldc           #8                  // String human say hello!
+         5: invokevirtual #9                  // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+         8: return
+      LineNumberTable:
+        line 52: 0
+        line 53: 8
+}
+SourceFile: "Demo1.java"

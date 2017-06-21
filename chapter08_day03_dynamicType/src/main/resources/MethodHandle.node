@@ -1,0 +1,116 @@
+java.lang.invoke
+Class MethodHandle
+
+    java.lang.Object
+        java.lang.invoke.MethodHandle 
+
+
+    public abstract class MethodHandle
+    extends Object
+
+    A method handle is a typed, directly executable reference to an underlying method, constructor, field, or similar
+    low-level operation, with optional transformations(转变) of arguments or return values. These transformations are 
+    quite general, and include such patterns as conversion, insertion, deletion, and substitution.
+    
+    
+Methods
+	public Object invokeWithArguments(Object... arguments)
+                           throws Throwable
+                           
+			Performs a variable arity(元数) invocation(调用), passing the arguments in the given list to the method 
+			handle, as if via an inexact(不准确的) invoke from a call site which mentions only the type Object, 
+			and whose arity is the length of the argument list.
+			Specifically, execution proceeds(收益) as if(类似) by the following steps, although the methods are not 
+			guaranteed to be called if the JVM can predict their effects.
+		
+		    Determine the length of the argument array as N. For a null reference, N=0.
+		    Determine the general type TN of N arguments as as TN=MethodType.genericMethodType(N).
+		    Force the original target method handle MH0 to the required type, as MH1 = MH0.asType(TN).
+		    Spread the array into N separate arguments A0, ....
+		    Invoke the type-adjusted method handle on the unpacked arguments: MH1.invokeExact(A0, ...).
+		    Take the return value as an Object reference.
+		
+		Because of the action of the asType step, the following argument conversions are applied as necessary:
+		
+		    reference casting(模型)
+		    unboxing
+		    widening primitive conversions 
+		
+		The result returned by the call is boxed(被封装) if it is a primitive, or forced to null if the return type is
+		void.
+		
+		This call is equivalent to the following code:
+		
+		
+		     MethodHandle invoker = MethodHandles.spreadInvoker(this.type(), 0);
+		     Object result = invoker.invokeExact(this, arguments);
+		     
+		
+		Unlike the signature(标记) polymorphic(多态) methods invokeExact and invoke, invokeWithArguments can be 
+		accessed normally via the Core Reflection API and JNI. It can therefore be used as a bridge between 
+		native or reflective code and method handles.
+		
+		Parameters:
+		    arguments - the arguments to pass to the target
+		Returns:
+		    the result returned by the target
+		Throws:
+		    ClassCastException - if an argument cannot be converted by reference casting
+		    WrongMethodTypeException - if the target's type cannot be adjusted to take the given number of Object arguments
+		    Throwable - anything thrown by the target method invocation
+		See Also:
+		    MethodHandles.spreadInvoker(java.lang.invoke.MethodType, int)  
+	In a word, this is equal caller method directly
+
+	
+	
+	
+	public MethodHandle asType(MethodType newType)
+
+		Produces an adapter method handle which adapts the type of the current method handle to a new type. 
+		The resulting method handle is guaranteed to report a type which is equal to the desired new type.
+		
+		If the original type and new type are equal, returns this.
+		
+		The new method handle, when invoked, will perform the following steps:
+		
+		    Convert(转换) the incoming argument list to match the original method handle's argument list.
+		    Invoke the original method handle on the converted argument list.
+		    Convert any result returned by the original method handle to the return type of new method handle. 
+		
+		This method provides the crucial(关键性的) behavioral difference between invokeExact and plain, inexact invoke.
+		The two methods perform the same steps when the caller's type descriptor exactly matches the callee's, 
+		but when the types differ, plain invoke also calls asType (or some internal(内部) equivalent) in order to 
+		match up the caller's and callee's types.
+		
+		If the current method is a variable arity method handle argument list conversion may involve the conversion
+		and collection of several arguments into an array, as described elsewhere. In every other case, 
+		all conversions are applied pairwise, which means that each argument or return value is converted to 
+		exactly one argument or return value (or no return value). The applied conversions are defined by 
+		consulting(询问) the the corresponding component types of the old and new method handle types.
+		
+		Let T0 and T1 be corresponding new and old parameter types, or old and new return types. Specifically, for some valid index i, let T0=newType.parameterType(i) and T1=this.type().parameterType(i). Or else, going the other way for return values, let T0=this.type().returnType() and T1=newType.returnType(). If the types are the same, the new method handle makes no change to the corresponding argument or return value (if any). Otherwise, one of the following conversions is applied if possible:
+		
+		    If T0 and T1 are references, then a cast to T1 is applied. (The types do not need to be related in any particular way. This is because a dynamic value of null can convert to any reference type.)
+		    If T0 and T1 are primitives, then a Java method invocation conversion (JLS 5.3) is applied, if one exists. (Specifically, T0 must convert to T1 by a widening primitive conversion.)
+		    If T0 is a primitive and T1 a reference, a Java casting conversion (JLS 5.5) is applied if one exists. (Specifically, the value is boxed from T0 to its wrapper class, which is then widened as needed to T1.)
+		    If T0 is a reference and T1 a primitive, an unboxing conversion will be applied at runtime, possibly followed by a Java method invocation conversion (JLS 5.3) on the primitive value. (These are the primitive widening conversions.) T0 must be a wrapper class or a supertype of one. (In the case where T0 is Object, these are the conversions allowed by java.lang.reflect.Method.invoke.) The unboxing conversion must have a possibility of success, which means that if T0 is not itself a wrapper class, there must exist at least one wrapper class TW which is a subtype of T0 and whose unboxed primitive value can be widened to T1.
+		    If the return type T1 is marked as void, any returned value is discarded
+		    If the return type T0 is void and T1 a reference, a null value is introduced.
+		    If the return type T0 is void and T1 a primitive, a zero value is introduced. 
+		
+		(Note: Both T0 and T1 may be regarded as static types, because neither corresponds specifically to the dynamic type of any actual argument or return value.)
+		
+		The method handle conversion cannot be made if any one of the required pairwise conversions cannot be made.
+		
+		At runtime, the conversions applied to reference arguments or return values may require additional runtime checks which can fail. An unboxing operation may fail because the original reference is null, causing a NullPointerException. An unboxing operation or a reference cast may also fail on a reference to an object of the wrong type, causing a ClassCastException. Although an unboxing operation may accept several kinds of wrappers, if none are available, a ClassCastException will be thrown.
+		
+		Parameters:
+		    newType - the expected type of the new method handle
+		Returns:
+		    a method handle which delegates to this after performing any necessary argument conversions, and arranges for any necessary return value conversions
+		Throws:
+		    NullPointerException - if newType is a null reference
+		    WrongMethodTypeException - if the conversion cannot be made
+		See Also:
+		    MethodHandles.explicitCastArguments(java.lang.invoke.MethodHandle, java.lang.invoke.MethodType) 

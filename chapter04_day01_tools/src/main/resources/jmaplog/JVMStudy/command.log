@@ -1,0 +1,23 @@
+ 972  jmap -heap > heap.log
+  973  less heap.log 
+  974  jmap -heap 2527 >heap.log 
+  975  jmap -heap 2527 
+  976  jps -l
+  977  jmap -heap 3626
+  978  jmap -heap 3626 >heap.log 
+  979  less heap.log 
+  980  jmap -histo 3626 >histo.log 
+  981  less histo.log 
+  982  history 
+  983  jmap -finalizerinfo 3626 > finalizerinfo.log
+  984  less finalizerinfo.log 
+  985  jmap -dump:format=b,file=./oa.bin 3626
+  986  less oa.bin 
+  987  less oa.bin yes
+  988  od oa.bin 
+  989  hexdump oa.bin 
+  990  ls
+  991  jmap -permstat 3626
+  992  jmap -permstat 3626 > permstat.log
+  993  less permstat.log 
+

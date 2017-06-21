@@ -1,0 +1,15 @@
+ygh@ygh-ubuntu:/tmp/sun/tools$ jps -v
+3473 org.eclipse.equinox.launcher_1.3.201.v20161025-1711.jar -Dosgi.requiredJavaVersion=1.8 -XX:+UseG1GC -XX:+UseStringDeduplication -Dosgi.requiredJavaVersion=1.8 -Xms256m -Xmx1024m
+4726 Jps -Denv.class.path=.:/tools/javaTools/jdk1.8.0_121/lib:/tools/javaTools/jdk1.8.0_121/jre/lib -Dapplication.home=/tools/javaTools/jdk1.8.0_121 -Xms8m
+
+ygh@ygh-ubuntu:/tmp/sun/tools$ jps -l
+3473 /tools/javaTools/eclipse//plugins/org.eclipse.equinox.launcher_1.3.201.v20161025-1711.jar
+4746 sun.tools.jps.Jps
+
+ygh@ygh-ubuntu:/tmp/sun/tools$ jps -m
+4768 Jps -m
+3473 org.eclipse.equinox.launcher_1.3.201.v20161025-1711.jar -os linux -ws gtk -arch x86_64 -showsplash /tools/javaTools/eclipse//plugins/org.eclipse.platform_4.6.2.v20161124-1400/splash.bmp -launcher /tools/javaTools/eclipse/eclipse -name Eclipse --launcher.library /tools/javaTools/eclipse//plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.401.v20161122-1740/eclipse_1618.so -startup /tools/javaTools/eclipse//plugins/org.eclipse.equinox.launcher_1.3.201.v20161025-1711.jar --launcher.appendVmargs -exitdata 20800b -product org.eclipse.epp.package.jee.product -vm /tools/javaTools/jdk1.8.0_121/bin/java -vmargs -Dosgi.requiredJavaVersion=1.8 -XX:+UseG1GC -XX:+UseStringDeduplication -Dosgi.requiredJavaVersion=1.8 -Xms256m -Xmx1024m -jar /tools/javaTools/eclipse//plugins/org.eclipse.equinox.launcher_1.3.201.v20161025-1711.jar
+
+ygh@ygh-ubuntu:/tmp/sun/tools$ jps -q
+3473
+4788

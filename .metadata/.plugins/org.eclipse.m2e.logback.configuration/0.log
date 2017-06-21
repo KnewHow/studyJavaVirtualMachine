@@ -1,0 +1,161 @@
+2017-06-21 18:26:27,378 [Worker-17] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: ygh.study.JVM:chapter01_test:0.0.1-SNAPSHOT @ /project/javaVirtualMachine/workspace/chapter01_test/pom.xml.
+2017-06-21 18:26:29,287 [Worker-17] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter01_test/src/main/java
+2017-06-21 18:26:29,289 [Worker-17] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter01_test/src/test/java
+2017-06-21 18:26:29,510 [Worker-17] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 3 sec
+2017-06-21 18:26:30,630 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:26:30,638 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter01_test/src/main/resources
+2017-06-21 18:26:30,649 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:26:30,650 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter01_test/src/test/resources
+2017-06-21 18:27:07,950 [Worker-17] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: ygh.study.JVM:chapter02_00:0.0.1-SNAPSHOT @ /project/javaVirtualMachine/workspace/chapter02_00/pom.xml.
+2017-06-21 18:27:08,701 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://maven.aliyun.com/nexus/content/groups/public/cglib/cglib/3.2.5/cglib-3.2.5.pom
+2017-06-21 18:27:08,868 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://maven.aliyun.com/nexus/content/groups/public/cglib/cglib/3.2.5/cglib-3.2.5.pom
+2017-06-21 18:27:09,022 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://maven.aliyun.com/nexus/content/groups/public/cglib/cglib-parent/3.2.5/cglib-parent-3.2.5.pom
+2017-06-21 18:27:09,161 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://maven.aliyun.com/nexus/content/groups/public/cglib/cglib-parent/3.2.5/cglib-parent-3.2.5.pom
+2017-06-21 18:27:09,319 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://maven.aliyun.com/nexus/content/groups/public/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+2017-06-21 18:27:09,435 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://maven.aliyun.com/nexus/content/groups/public/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+2017-06-21 18:27:09,675 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://maven.aliyun.com/nexus/content/groups/public/org/ow2/asm/asm/5.2/asm-5.2.pom
+2017-06-21 18:27:09,862 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://maven.aliyun.com/nexus/content/groups/public/org/ow2/asm/asm/5.2/asm-5.2.pom
+2017-06-21 18:27:10,040 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://maven.aliyun.com/nexus/content/groups/public/org/ow2/asm/asm-parent/5.2/asm-parent-5.2.pom
+2017-06-21 18:27:10,156 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://maven.aliyun.com/nexus/content/groups/public/org/ow2/asm/asm-parent/5.2/asm-parent-5.2.pom
+2017-06-21 18:27:10,335 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://maven.aliyun.com/nexus/content/groups/public/org/ow2/ow2/1.3/ow2-1.3.pom
+2017-06-21 18:27:10,505 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://maven.aliyun.com/nexus/content/groups/public/org/ow2/ow2/1.3/ow2-1.3.pom
+2017-06-21 18:27:10,660 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://maven.aliyun.com/nexus/content/groups/public/org/apache/ant/ant/1.9.6/ant-1.9.6.pom
+2017-06-21 18:27:10,759 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://maven.aliyun.com/nexus/content/groups/public/org/apache/ant/ant/1.9.6/ant-1.9.6.pom
+2017-06-21 18:27:10,902 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://maven.aliyun.com/nexus/content/groups/public/org/apache/ant/ant-parent/1.9.6/ant-parent-1.9.6.pom
+2017-06-21 18:27:11,002 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://maven.aliyun.com/nexus/content/groups/public/org/apache/ant/ant-parent/1.9.6/ant-parent-1.9.6.pom
+2017-06-21 18:27:11,183 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://maven.aliyun.com/nexus/content/groups/public/org/apache/ant/ant-launcher/1.9.6/ant-launcher-1.9.6.pom
+2017-06-21 18:27:11,278 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://maven.aliyun.com/nexus/content/groups/public/org/apache/ant/ant-launcher/1.9.6/ant-launcher-1.9.6.pom
+2017-06-21 18:27:11,584 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://maven.aliyun.com/nexus/content/groups/public/com/alexkasko/unsafe/unsafe-tools/1.4.4/unsafe-tools-1.4.4.pom
+2017-06-21 18:27:11,682 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://maven.aliyun.com/nexus/content/groups/public/com/alexkasko/unsafe/unsafe-tools/1.4.4/unsafe-tools-1.4.4.pom
+2017-06-21 18:27:11,821 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://maven.aliyun.com/nexus/content/groups/public/cglib/cglib/3.2.5/cglib-3.2.5.jar
+2017-06-21 18:27:12,453 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://maven.aliyun.com/nexus/content/groups/public/cglib/cglib/3.2.5/cglib-3.2.5.jar
+2017-06-21 18:27:12,561 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://maven.aliyun.com/nexus/content/groups/public/org/ow2/asm/asm/5.2/asm-5.2.jar
+2017-06-21 18:27:12,725 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://maven.aliyun.com/nexus/content/groups/public/org/ow2/asm/asm/5.2/asm-5.2.jar
+2017-06-21 18:27:12,840 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://maven.aliyun.com/nexus/content/groups/public/org/apache/ant/ant/1.9.6/ant-1.9.6.jar
+2017-06-21 18:27:17,076 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://maven.aliyun.com/nexus/content/groups/public/org/apache/ant/ant/1.9.6/ant-1.9.6.jar
+2017-06-21 18:27:17,173 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://maven.aliyun.com/nexus/content/groups/public/org/apache/ant/ant-launcher/1.9.6/ant-launcher-1.9.6.jar
+2017-06-21 18:27:17,288 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://maven.aliyun.com/nexus/content/groups/public/org/apache/ant/ant-launcher/1.9.6/ant-launcher-1.9.6.jar
+2017-06-21 18:27:17,514 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading http://maven.aliyun.com/nexus/content/groups/public/com/alexkasko/unsafe/unsafe-tools/1.4.4/unsafe-tools-1.4.4.jar
+2017-06-21 18:27:17,735 [Worker-17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://maven.aliyun.com/nexus/content/groups/public/com/alexkasko/unsafe/unsafe-tools/1.4.4/unsafe-tools-1.4.4.jar
+2017-06-21 18:27:18,112 [Worker-17] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter02_00/src/main/java
+2017-06-21 18:27:18,113 [Worker-17] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter02_00/src/test/java
+2017-06-21 18:27:18,197 [Worker-17] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 10 sec
+2017-06-21 18:27:18,842 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:27:18,843 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter02_00/src/main/resources
+2017-06-21 18:27:18,849 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:27:18,850 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter02_00/src/test/resources
+2017-06-21 18:27:29,341 [Worker-12] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: ygh.study.JVM:chapter02_01_dynamicProxy:0.0.1-SNAPSHOT @ /project/javaVirtualMachine/workspace/chapter02_01_dynamicProxy/pom.xml.
+2017-06-21 18:27:29,461 [Worker-12] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter02_01_dynamicProxy/src/main/java
+2017-06-21 18:27:29,463 [Worker-12] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /chapter02_01_dynamicProxy/src/main/resources
+2017-06-21 18:27:29,464 [Worker-12] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter02_01_dynamicProxy/src/test/java
+2017-06-21 18:27:29,523 [Worker-12] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 0 sec
+2017-06-21 18:27:29,934 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:27:29,946 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
+2017-06-21 18:27:29,964 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:27:29,965 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter02_01_dynamicProxy/src/test/resources
+2017-06-21 18:27:50,123 [Worker-18] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: ygh.study.JVM:chapter03_day01:0.0.1-SNAPSHOT @ /project/javaVirtualMachine/workspace/chapter03_day01_gc/pom.xml.
+2017-06-21 18:27:50,196 [Worker-18] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter03_day01_gc/src/main/java
+2017-06-21 18:27:50,196 [Worker-18] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /chapter03_day01_gc/src/main/resources
+2017-06-21 18:27:50,197 [Worker-18] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter03_day01_gc/src/test/java
+2017-06-21 18:27:50,249 [Worker-18] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 0 sec
+2017-06-21 18:27:50,561 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:27:50,563 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-06-21 18:27:50,571 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:27:50,571 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter03_day01_gc/src/test/resources
+2017-06-21 18:28:28,537 [Worker-18] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: ygh.study.JVM:chapter03_day02_gcDemo:0.0.1-SNAPSHOT @ /project/javaVirtualMachine/workspace/chapter03_day02_gcDemo/pom.xml.
+2017-06-21 18:28:28,618 [Worker-18] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter03_day02_gcDemo/src/main/java
+2017-06-21 18:28:28,619 [Worker-18] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter03_day02_gcDemo/src/test/java
+2017-06-21 18:28:28,660 [Worker-18] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 0 sec
+2017-06-21 18:28:28,989 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:28:28,990 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter03_day02_gcDemo/src/main/resources
+2017-06-21 18:28:28,994 [Worker-19] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:28:28,995 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter03_day02_gcDemo/src/test/resources
+2017-06-21 18:28:45,545 [Worker-13] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: ygh.study.JVM:chapter04_day01:0.0.1-SNAPSHOT @ /project/javaVirtualMachine/workspace/chapter04_day01_tools/pom.xml.
+2017-06-21 18:28:45,685 [Worker-13] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter04_day01_tools/src/main/java
+2017-06-21 18:28:45,686 [Worker-13] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /chapter04_day01_tools/src/main/resources
+2017-06-21 18:28:45,687 [Worker-13] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter04_day01_tools/src/test/java
+2017-06-21 18:28:45,778 [Worker-13] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 0 sec
+2017-06-21 18:28:46,138 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:28:46,142 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 23 resources
+2017-06-21 18:28:48,234 [Worker-12] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:28:48,235 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter04_day01_tools/src/test/resources
+2017-06-21 18:29:02,123 [Worker-18] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: ygh.study.JVM:chapter04_day02_visualisationTools:0.0.1-SNAPSHOT @ /project/javaVirtualMachine/workspace/chapter04_day02_visualisation_Jconsole/pom.xml.
+2017-06-21 18:29:02,219 [Worker-18] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter04_day02_visualisation_Jconsole/src/main/java
+2017-06-21 18:29:02,220 [Worker-18] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter04_day02_visualisation_Jconsole/src/test/java
+2017-06-21 18:29:02,250 [Worker-18] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 0 sec
+2017-06-21 18:29:02,531 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:29:02,532 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter04_day02_visualisation_Jconsole/src/main/resources
+2017-06-21 18:29:02,533 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:29:02,534 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter04_day02_visualisation_Jconsole/src/test/resources
+2017-06-21 18:29:23,820 [Worker-18] ERROR o.e.m.c.i.p.ProjectConfigurationManager - Project chapter04_day02_visualisation_Jconsole already exists
+2017-06-21 18:29:23,887 [Worker-18] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 0 sec
+2017-06-21 18:29:48,042 [Worker-12] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: ygh.study.JVM:chapter04_day03_visualVM:0.0.1-SNAPSHOT @ /project/javaVirtualMachine/workspace/chapter04_day03_visualVM/pom.xml.
+2017-06-21 18:29:48,149 [Worker-12] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter04_day03_visualVM/src/main/java
+2017-06-21 18:29:48,150 [Worker-12] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter04_day03_visualVM/src/test/java
+2017-06-21 18:29:48,177 [Worker-12] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 0 sec
+2017-06-21 18:29:48,498 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:29:48,499 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter04_day03_visualVM/src/main/resources
+2017-06-21 18:29:48,505 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:29:48,505 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter04_day03_visualVM/src/test/resources
+2017-06-21 18:30:17,479 [Worker-18] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: ygh.study.JVM:chapter06_classStructure_day01:0.0.1-SNAPSHOT @ /project/javaVirtualMachine/workspace/chapter06_classStructure_day01/pom.xml.
+2017-06-21 18:30:17,622 [Worker-18] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter06_classStructure_day01/src/main/java
+2017-06-21 18:30:17,622 [Worker-18] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter06_classStructure_day01/src/test/java
+2017-06-21 18:30:17,672 [Worker-18] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 0 sec
+2017-06-21 18:30:18,052 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:30:18,053 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter06_classStructure_day01/src/main/resources
+2017-06-21 18:30:18,054 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:30:18,055 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter06_classStructure_day01/src/test/resources
+2017-06-21 18:30:38,219 [Worker-13] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: ygh.study.JVM:chapter07_classInitialize_day01:0.0.1-SNAPSHOT @ /project/javaVirtualMachine/workspace/chapter07_classInitialize_day01/pom.xml.
+2017-06-21 18:30:38,314 [Worker-13] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter07_classInitialize_day01/src/main/java
+2017-06-21 18:30:38,315 [Worker-13] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter07_classInitialize_day01/src/test/java
+2017-06-21 18:30:38,347 [Worker-13] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 0 sec
+2017-06-21 18:30:38,678 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:30:38,678 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter07_classInitialize_day01/src/main/resources
+2017-06-21 18:30:38,679 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:30:38,680 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter07_classInitialize_day01/src/test/resources
+2017-06-21 18:31:06,239 [Worker-12] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: ygh.study.JVM:chapter07_classLoader_day01:0.0.1-SNAPSHOT @ /project/javaVirtualMachine/workspace/chapter07_classLoader_day01/pom.xml.
+2017-06-21 18:31:06,321 [Worker-12] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter07_classLoader_day01/src/main/java
+2017-06-21 18:31:06,322 [Worker-12] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter07_classLoader_day01/src/test/java
+2017-06-21 18:31:06,343 [Worker-12] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 0 sec
+2017-06-21 18:31:06,739 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:31:06,740 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter07_classLoader_day01/src/main/resources
+2017-06-21 18:31:06,744 [Worker-18] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:31:06,746 [Worker-18] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter07_classLoader_day01/src/test/resources
+2017-06-21 18:31:21,143 [Worker-13] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: ygh.study.JVM:chapter08_day01_VMStack:0.0.1-SNAPSHOT @ /project/javaVirtualMachine/workspace/chapter08_day01_VMStack/pom.xml.
+2017-06-21 18:31:21,465 [Worker-13] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter08_day01_VMStack/src/main/java
+2017-06-21 18:31:21,465 [Worker-13] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter08_day01_VMStack/src/test/java
+2017-06-21 18:31:21,570 [Worker-13] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 0 sec
+2017-06-21 18:31:21,893 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:31:21,894 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter08_day01_VMStack/src/main/resources
+2017-06-21 18:31:21,895 [Worker-11] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:31:21,896 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter08_day01_VMStack/src/test/resources
+2017-06-21 18:31:41,227 [Worker-12] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: ygh.study.JVM:chapter08_day02_reload:0.0.1-SNAPSHOT @ /project/javaVirtualMachine/workspace/chapter08_day02_rewrite/pom.xml.
+2017-06-21 18:31:41,286 [Worker-12] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter08_day02_rewrite/src/main/java
+2017-06-21 18:31:41,286 [Worker-12] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter08_day02_rewrite/src/test/java
+2017-06-21 18:31:41,317 [Worker-12] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 0 sec
+2017-06-21 18:31:41,587 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:31:41,588 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter08_day02_rewrite/src/main/resources
+2017-06-21 18:31:41,590 [Worker-13] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:31:41,590 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter08_day02_rewrite/src/test/resources
+2017-06-21 18:32:00,145 [Worker-12] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: ygh.study.JVM:chapter08_day03_dynamicType:0.0.1-SNAPSHOT @ /project/javaVirtualMachine/workspace/chapter08_day03_dynamicType/pom.xml.
+2017-06-21 18:32:00,266 [Worker-12] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter08_day03_dynamicType/src/main/java
+2017-06-21 18:32:00,266 [Worker-12] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /chapter08_day03_dynamicType/src/main/resources
+2017-06-21 18:32:00,266 [Worker-12] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /chapter08_day03_dynamicType/src/test/java
+2017-06-21 18:32:00,314 [Worker-12] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 0 sec
+2017-06-21 18:32:00,617 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:32:00,618 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 6 resources
+2017-06-21 18:32:00,625 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:32:00,625 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /project/javaVirtualMachine/workspace/chapter08_day03_dynamicType/src/test/resources
+2017-06-21 18:38:41,211 [Worker-17] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: justtest:test:0.0.1-SNAPSHOT @ /project/javaVirtualMachine/workspace/test/pom.xml.
+2017-06-21 18:38:41,314 [Worker-17] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /test/src/main/java
+2017-06-21 18:38:41,314 [Worker-17] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /test/src/main/resources
+2017-06-21 18:38:41,315 [Worker-17] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /test/src/test/java
+2017-06-21 18:38:41,315 [Worker-17] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /test/src/test/resources
+2017-06-21 18:38:41,948 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:38:41,949 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-21 18:38:41,952 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:38:41,953 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-21 18:39:04,323 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:39:04,334 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-06-21 18:39:04,349 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-06-21 18:39:04,352 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource

@@ -1,0 +1,32 @@
+ack=2, locals=3, args_size=1
+         0: new           #2                  // class chapter08_day02_reload/Man
+         3: dup
+         4: invokespecial #3                  // Method chapter08_day02_reload/Man."<init>":()V
+         7: astore_1						  //把实例变量man存放在局部变量表第一个Slot中
+         8: new           #4                  // class chapter08_day02_reload/Woman
+        11: dup
+        12: invokespecial #5                  // Method chapter08_day02_reload/Woman."<init>":()V
+        15: astore_2						  //把实例变量woman存放在局部变量表第二个Slot中
+        16: aload_1							  //把第一个的Slot对象压到操作数栈的栈顶
+        17: invokevirtual #6                  // Method chapter08_day02_reload/Human.sayHello:()V
+        20: aload_2						      //把第二个的Slot对象压到操作数栈的栈顶
+        21: invokevirtual #6                  // Method chapter08_day02_reload/Human.sayHello:()V
+        24: new           #4                  // class chapter08_day02_reload/Woman
+        27: dup
+        28: invokespecial #5                  // Method chapter08_day02_reload/Woman."<init>":()V
+        31: astore_1
+        32: aload_1
+        33: invokevirtual #6                  // Method chapter08_day02_reload/Human.sayHello:()V
+        36: return
+       
+从上面的17行和22行，我们可以看到，在静态的情况下(现在看到的情况下)，使用的是  Human.sayHello:() 方法。但是在运行时执行的目标方法是
+不同的。这就要来分析 invokevirtual 指令了。invokevirtual指令执行的基本步骤：
+	1.找到操作数栈的第一个元素所指的实际对象的类型，记为C
+	2.如果在类型C中找到了与常量中描述符和简单名称都相同的方法，则进行访问权限的检验，如果通过返回这个方法的直接引用，查找结束，否则返回java.lang.
+	IllegalAccessError
+	3.否则，按照继承关系从下往上依次对C的各个父类进行查找和验证
+	4.如果始终没有找到方法，就抛出java.lang.AbstractMethodError
+	
+	由于invokevirtual执行的第一步就是在运行期间确定接受者的实际类型，所以两次调用中使用的invokevirtual指令把常量池中的类的方法符号引用解析到
+	不同的直接引用上面，这就是Java语言中重写的本质。
+	

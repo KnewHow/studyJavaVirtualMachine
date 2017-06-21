@@ -1,0 +1,119 @@
+eclipse JVM arguments:
+-verbose:gc -Xms20M -Xmx20M -Xmn10M -XX:+PrintGCDetails -XX:SurvivorRatio=8
+
+run result:
+[GC (Allocation Failure) [PSYoungGen: 7081K->992K(9216K)] 7081K->4985K(19456K), 0.1560837 secs] [Times: user=0.17 sys=0.29, real=0.15 secs] 
+[GC (Allocation Failure) --[PSYoungGen: 9184K->9184K(9216K)] 13177K->19416K(19456K), 0.1341938 secs] [Times: user=0.14 sys=0.06, real=0.13 secs] 
+[Full GC (Ergonomics) [PSYoungGen: 9184K->0K(9216K)] [ParOldGen: 10232K->9804K(10240K)] 19416K->9804K(19456K), [Metaspace: 2494K->2494K(1056768K)], 1.0280519 secs] [Times: user=1.35 sys=0.05, real=1.03 secs] 
+[Full GC (Ergonomics) [PSYoungGen: 7556K->7912K(9216K)] [ParOldGen: 9804K->7694K(10240K)] 17360K->15606K(19456K), [Metaspace: 2494K->2494K(1056768K)], 0.7519945 secs] [Times: user=1.41 sys=0.04, real=0.75 secs] 
+[Full GC (Allocation Failure) [PSYoungGen: 7912K->7912K(9216K)] [ParOldGen: 7694K->7682K(10240K)] 15606K->15595K(19456K), [Metaspace: 2494K->2494K(1056768K)]Exception in thread "main" , 0.5773472 secs] [Times: user=1.49 sys=0.08, real=0.57 secs] 
+java.lang.OutOfMemoryError: Java heap space
+	at java.util.Arrays.copyOf(Arrays.java:3210)
+	at java.util.Arrays.copyOf(Arrays.java:3181)
+	at java.util.ArrayList.grow(ArrayList.java:261)
+	at java.util.ArrayList.ensureExplicitCapacity(ArrayList.java:235)
+	at java.util.ArrayList.ensureCapacityInternal(ArrayList.java:227)
+	at java.util.ArrayList.add(ArrayList.java:458)
+	at chapter02.heapOOM.HeapOOF.main(HeapOOF.java:16)
+Heap
+ PSYoungGen      total 9216K, used 8192K [0x00000000ff600000, 0x0000000100000000, 0x0000000100000000)
+  eden space 8192K, 100% used [0x00000000ff600000,0x00000000ffe00000,0x00000000ffe00000)
+  from space 1024K, 0% used [0x00000000ffe00000,0x00000000ffe00000,0x00000000fff00000)
+  to   space 1024K, 46% used [0x00000000fff00000,0x00000000fff77be8,0x0000000100000000)
+ ParOldGen       total 10240K, used 7682K [0x00000000fec00000, 0x00000000ff600000, 0x00000000ff600000)
+  object space 10240K, 75% used [0x00000000fec00000,0x00000000ff380ae0,0x00000000ff600000)
+ Metaspace       used 2526K, capacity 4486K, committed 4864K, reserved 1056768K
+  class space    used 271K, capacity 386K, committed 512K, reserved 1048576K
+
+  
+==================================================================
+
+JVM arguments in terminal
+-Xms20M -Xmx20M -XX:+HeapDumpOnOutOfMemoryError
+
+run command:
+	java -Xms20M -Xmx20M -XX:+HeapDumpOnOutOfMemoryError HeapOOF 
+run result:
+java.lang.OutOfMemoryError: Java heap space
+Dumping heap to java_pid3619.hprof ...
+Heap dump file created [27537107 bytes in 0.411 secs]
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.util.Arrays.copyOf(Arrays.java:3210)
+	at java.util.Arrays.copyOf(Arrays.java:3181)
+	at java.util.ArrayList.grow(ArrayList.java:261)
+	at java.util.ArrayList.ensureExplicitCapacity(ArrayList.java:235)
+	at java.util.ArrayList.ensureCapacityInternal(ArrayList.java:227)
+	at java.util.ArrayList.add(ArrayList.java:458)
+	at HeapOOF.main(HeapOOF.java:15)
+
+	
+=================some JVM Heap options =========================
+you can read the doc by "man java" command, then search "-Xmn"
+
+-Xmssize
+	Sets the initial size(in bytes) of heap.This value must be a
+	multiple of 1024 and greater than 1MB. Append the letter k or K
+	to indicate kilobytes, m or M to indicate megabytes, g or G to
+	indicate gigabytes.
+	
+	The following examples show how to set the size of allocated
+	memory to 6 MB using various units
+		-Xms6291456
+        -Xms6144k
+        -Xms6m
+		 
+-Xmnsize
+	Sets the initial and maximum size (in bytes) of the heap for young generation(nursery).
+	Append the letter k or K to indicate kilobytes, m or M to indicate megabytes, g or G to indicate gigabytes.
+	The young generation region of heap is used for new objects.GC(Garbage Collected) in this region is more often
+	than in other regions. If the size for young generation is to small, then a lot of minor garbage collection will 
+	be performed. If the size is too large, then only full garbage collections will be performed,which can take long time
+	to complete. Oracle recommends that you keep the size for the young generation between a half and a quarter of
+	the overall heap size
+	
+	The following examples show how to set the initial and maximum size of young generation to 256 MB using various units:
+
+               -Xmn256m
+               -Xmn262144k
+               -Xmn268435456
+
+    Instead of the -Xmn option to set both the initial and maximum size of the heap for the young generation, you can use 
+    -XX:NewSize to set the initial size and -XX:MaxNewSize to set the maximum size.
+	
+
+
+-Xmxsize:
+	Specifies the maximum size (in bytes) of the memory allocation pool in bytes. This value must be a multiple of 1024 and greater
+	than 2 MB. Append the letter k or K to indicate kilobytes, m or M to indicate megabytes, g or G to indicate gigabytes. The
+	default value is chosen at runtime based on system configuration. For server deployments, -Xms and -Xmx are often set to the
+	same value. See the section "Ergonomics" in Java SE HotSpot Virtual Machine Garbage Collection Tuning Guide at
+	http://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/index.html.
+	
+	The following examples show how to set the maximum allowed size of allocated memory to 80 MB using various units:
+	
+	       -Xmx83886080
+	       -Xmx81920k
+	       -Xmx80m
+	
+	The -Xmx option is equivalent to -XX:MaxHeapSize.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,92 @@
+
+compact1, compact2, compact3
+java.lang.reflect
+Class Field
+
+    java.lang.Object
+        java.lang.reflect.AccessibleObject
+            java.lang.reflect.Field 
+
+    All Implemented Interfaces:
+        AnnotatedElement, Member
+
+    public final class Field
+    extends AccessibleObject
+    implements Member
+
+    A Field provides information about, and dynamic access to, 
+    a single field of a class or an interface. The reflected field 
+    may be a class (static) field or an instance field.
+
+    A Field permits widening(扩展) conversions(转换) to occur during 
+    a get or set access operation, but throws an IllegalArgumentException 
+    if a narrowing(窄化) conversion would occur.
+    
+
+public Object get(Object obj)
+           throws IllegalArgumentException,
+                  IllegalAccessException
+
+Returns the value of the field represented(代表) by this Field, on the specified(指定) object. 
+The value is automatically wrapped in an object if it has a primitive type.
+
+The underlying(潜在的) field's value is obtained as follows:
+
+If the underlying field is a static field, the obj argument is ignored; it may be null.
+
+Otherwise, the underlying field is an instance field. If the specified obj argument is null, 
+the method throws a NullPointerException. If the specified object is not an instance of the class 
+or interface declaring the underlying field, the method throws an IllegalArgumentException.
+
+If this Field object is enforcing Java language access control, and the underlying field is inaccessible, 
+the method throws an IllegalAccessException. If the underlying field is static, the class that declared 
+the field is initialized if it has not already been initialized.
+
+Otherwise, the value is retrieved（回收） from the underlying instance or static field. If the field has a 
+primitive type, the value is wrapped in an object before being returned, otherwise it is returned as is.
+
+If the field is hidden in the type of obj, the field's value is obtained according to the preceding rules.
+
+Parameters:
+    obj - object from which the represented field's value is to be extracted
+Returns:
+    the value of the represented field in object obj; primitive values are wrapped in an appropriate object before being returned
+Throws:
+    IllegalAccessException - if this Field object is enforcing Java language access control and the underlying field is inaccessible.
+    IllegalArgumentException - if the specified object is not an instance of the class or interface declaring the underlying field (or a subclass or implementor thereof).
+    NullPointerException - if the specified object is null and the field is an instance field.
+    ExceptionInInitializerError - if the initialization provoked by this method fails.     
+   
+ 
+ Class
+ 
+ 
+ public Field[] getDeclaredFields()
+                          throws SecurityException
+
+Returns an array of Field objects reflecting all the fields declared by the class or interface represented 
+by this Class object. This includes public, protected, default (package) access, and private fields, 
+but excludes inherited fields.
+
+If this Class object represents a class or interface with no declared fields, then this method returns 
+an array of length 0.
+
+If this Class object represents an array type, a primitive type, or void, then this method returns 
+an array of length 0.
+
+The elements in the returned array are not sorted and are not in any particular order.
+
+Returns:
+    the array of Field objects representing all the declared fields of this class
+Throws:
+    SecurityException - If a security manager, s, is present and any of the following conditions is met:
+
+        the caller's class loader is not the same as the class loader of this class and invocation of s.checkPermission method with RuntimePermission("accessDeclaredMembers") denies access to the declared fields within this class
+        the caller's class loader is not the same as or an ancestor of the class loader for the current class and invocation of s.checkPackageAccess() denies access to the package of this class 
+
+Since:
+    JDK1.1
+See The Java™ Language Specification:
+    8.2 Class Members, 8.3 Field Declarations 
+    
+    

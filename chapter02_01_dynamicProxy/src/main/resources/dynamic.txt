@@ -1,0 +1,2 @@
+What is the dynamic Proxy?
+In runtime,create a object which implements one or more interface

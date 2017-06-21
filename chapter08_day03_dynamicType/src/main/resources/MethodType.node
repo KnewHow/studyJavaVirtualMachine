@@ -1,0 +1,60 @@
+Class MethodType
+
+    java.lang.Object
+        java.lang.invoke.MethodType 
+
+    All Implemented Interfaces:
+        Serializable
+
+
+    public final class MethodType
+    extends Object
+    implements Serializable
+
+    A method type represents the arguments and return type accepted and returned by a method handle, or the arguments and return type passed and expected by a method handle caller. Method types must be properly matched between a method handle and all its callers, and the JVM's operations enforce this matching at, specifically during calls to MethodHandle.invokeExact and MethodHandle.invoke, and during execution of invokedynamic instructions.
+
+    The structure is a return type accompanied by any number of parameter types. The types (primitive, void, and reference) are represented by Class objects. (For ease of exposition, we treat void as if it were a type. In fact, it denotes the absence of a return type.)
+
+    All instances of MethodType are immutable. Two instances are completely interchangeable if they compare equal. Equality depends on pairwise correspondence of the return and parameter types and on nothing else.
+
+    This type can be created only by factory methods. All factory methods may cache values, though caching is not guaranteed. Some factory methods are static, while others are virtual methods which modify precursor method types, e.g., by changing a selected parameter.
+
+    Factory methods which operate on groups of parameter types are systematically presented in two versions, so that both Java arrays and Java lists can be used to work with groups of parameter types. The query methods parameterArray and parameterList also provide a choice between arrays and lists.
+
+    MethodType objects are sometimes derived from bytecode instructions such as invokedynamic, specifically from the type descriptor strings associated with the instructions in a class file's constant pool.
+
+    Like classes and strings, method types can also be represented directly in a class file's constant pool as constants. A method type may be loaded by an ldc instruction which refers to a suitable CONSTANT_MethodType constant pool entry. The entry refers to a CONSTANT_Utf8 spelling for the descriptor string. (For full details on method type constants, see sections 4.4.8 and 5.4.3.5 of the Java Virtual Machine Specification.)
+
+    When the JVM materializes a MethodType from a descriptor string, all classes named in the descriptor must be accessible, and will be loaded. (But the classes need not be initialized, as is the case with a CONSTANT_Class.) This loading may occur at any time before the MethodType object is first derived.
+
+    See Also:
+        Serialized Form
+
+
+Methods:
+
+	public static MethodType fromMethodDescriptorString(String descriptor,
+                                                    ClassLoader loader)
+                                             throws IllegalArgumentException,
+                                                    TypeNotPresentException
+
+		Finds or creates an instance of a method type, given the spelling of its bytecode(字节码) descriptor. 
+		Convenience(方便) method for methodType. Any class or interface name embedded(嵌入) in the descriptor string 
+		will be resolved(解析) by calling ClassLoader.loadClass(java.lang.String) on the given loader (or if it is 
+		null, on the system class loader).
+		
+		Note that it is possible to encounter(碰到) method types which cannot be constructed by this method, 
+		because their component types are not all reachable from a common class loader.
+		
+		This method is included for the benefit of applications that must generate bytecodes that process method 
+		handles and invokedynamic.
+		
+		Parameters:
+		    descriptor - a bytecode-level type descriptor string "(T...)T"
+		    loader - the class loader in which to look up the types
+		Returns:
+		    a method type matching the bytecode-level type descriptor
+		Throws:
+		    NullPointerException - if the string is null
+		    IllegalArgumentException - if the string is not well-formed
+		    TypeNotPresentException - if a named type cannot be found 

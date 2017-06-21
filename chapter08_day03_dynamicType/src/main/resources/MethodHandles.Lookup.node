@@ -1,0 +1,61 @@
+
+compact1, compact2, compact3
+java.lang.invoke
+Class MethodHandles.Lookup
+
+    java.lang.Object
+        java.lang.invoke.MethodHandles.Lookup 
+
+    Enclosing class:
+        MethodHandles
+
+
+    public static final class MethodHandles.Lookup
+    extends Object
+
+    A lookup object is a factory for creating method handles, when the creation requires access checking(权限校验). 
+    Method handles do not perform(执行) access checks when they are called, but rather when they are created. 
+    Therefore, method handle access restrictions must be enforced when a method handle is created. 
+    The caller class against which those restrictions are enforced is known as the lookup class.
+    (look up 是一个创建method handles 的工厂，但是，创建Method handles 的时候需要访问权限的校验。Method handles 在调用的时候
+    不会执行权限的校验，但是会在创建的时候强制进行权限的校验。因此，method handle 访问权限必须被强制进行当它创建的时候。那些需要强制进行权限校验的
+    调用类就是 lookup class )
+
+    A lookup class which needs to create method handles will call MethodHandles.lookup to create a factory for itself.
+    When the Lookup factory object is created, the identity(身份) of the lookup class is determined, and securely 
+    stored in the Lookup object. The lookup class (or its delegates(委托)) may then use factory methods on the 
+    Lookup object to create method handles for access-checked members. This includes all methods, constructors, 
+    and fields which are allowed to the lookup class, even private ones. s
+
+Methods:
+
+		public Class<?> lookupClass()
+
+		Tells which class is performing the lookup. It is this class against which checks are performed for 
+		visibility(可见性) and access permissions.
+		
+		The class implies(暗示) a maximum level of access permission, but the permissions may be additionally limited 
+		by the bitmask(屏蔽模式) lookupModes, which controls whether non-public members can be accessed.
+		
+		Returns:
+		    the lookup class, on behalf of(代表..利益) which this lookup object finds members     
+	
+	
+	
+		    
+		public MethodHandle findStatic(Class<?> refc,
+		                               String name,
+		                               MethodType type)
+		                        throws NoSuchMethodException,
+		                               IllegalAccessException
+		
+		Produces a method handle for a static method. The type of the method handle will be that of the method. 
+		(Since static methods do not take receivers(实例对象), there is no additional receiver argument inserted into 
+		the method handle type, as there would be with findVirtual or findSpecial.) The method and all its argument 
+		types must be accessible to the lookup object.
+		
+		The returned method handle will have variable arity if and only if the method's variable arity modifier bit 
+		(0x0080) is set.
+		
+		If the returned method handle is invoked, the method's class will be initialized, if it has not already been 
+		initialized.(类的初始化Class<T>) 	

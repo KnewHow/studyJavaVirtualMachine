@@ -1,0 +1,19 @@
+ParNew:
+	-XX:SurvivorRatio=ratio
+       Sets the ratio(比例) between eden space size and survivor space size. By default, this option is set to 8. 
+       The following example shows how to set the eden/survivor space ratio to 4:
+           -XX:SurvivorRatio=4
+
+Parallel Scavenge:
+	-XX:MaxGCPauseMillis=time
+           Sets a target for the maximum GC pause（停顿） time (in milliseconds). This is a soft goal, and the JVM will 
+           make its best effort to achieve it. By default, there is no maximum pause time value.
+           The following example shows how to set the maximum target pause time to 500 ms:
+
+               -XX:MaxGCPauseMillis=500
+
+	-XX:+UseAdaptiveSizePolicy
+           Enables the use of adaptive(自适应能力) generation sizing. This option is enabled by default. 
+           To disable adaptive generation sizing, specify -XX:-UseAdaptiveSizePolicy and set the size
+            of the memory allocation pool explicitly (see the -XX:SurvivorRatio option).
+	

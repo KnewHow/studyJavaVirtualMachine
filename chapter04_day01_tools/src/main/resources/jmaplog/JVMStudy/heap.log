@@ -1,0 +1,50 @@
+
+using thread-local object allocation.
+Mark Sweep Compact GC
+
+Heap Configuration:
+   MinHeapFreeRatio = 40
+   MaxHeapFreeRatio = 70
+   MaxHeapSize      = 490733568 (468.0MB)
+   NewSize          = 1310720 (1.25MB)
+   MaxNewSize       = 17592186044415 MB
+   OldSize          = 5439488 (5.1875MB)
+   NewRatio         = 2
+   SurvivorRatio    = 8
+   PermSize         = 21757952 (20.75MB)
+   MaxPermSize      = 85983232 (82.0MB)
+   G1HeapRegionSize = 0 (0.0MB)
+
+Heap Usage:
+New Generation (Eden + 1 Survivor Space):
+   capacity = 18612224 (17.75MB)
+   used     = 359040 (0.3424072265625MB)
+   free     = 18253184 (17.4075927734375MB)
+   1.9290547975352113% used
+Eden Space:
+   capacity = 16580608 (15.8125MB)
+   used     = 359040 (0.3424072265625MB)
+   free     = 16221568 (15.4700927734375MB)
+   2.165421195652174% used
+From Space:
+   capacity = 2031616 (1.9375MB)
+   used     = 0 (0.0MB)
+   free     = 2031616 (1.9375MB)
+   0.0% used
+To Space:
+   capacity = 2031616 (1.9375MB)
+   used     = 0 (0.0MB)
+   free     = 2031616 (1.9375MB)
+   0.0% used
+tenured generation:
+   capacity = 41205760 (39.296875MB)
+   used     = 24300088 (23.17436981201172MB)
+   free     = 16905672 (16.12250518798828MB)
+   58.97255141028827% used
+Perm Generation:
+   capacity = 44564480 (42.5MB)
+   used     = 44532048 (42.46907043457031MB)
+   free     = 32432 (0.0309295654296875MB)
+   99.92722455193015% used
+
+21583 interned Strings occupying 2498104 bytes.
