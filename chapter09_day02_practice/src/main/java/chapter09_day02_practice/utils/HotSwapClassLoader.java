@@ -7,7 +7,7 @@ package chapter09_day02_practice.utils;
  */
 public class HotSwapClassLoader extends ClassLoader {
 
-	public HotSwapClassLoader(ClassLoader parent) {
+	public HotSwapClassLoader() {
 		super(HotSwapClassLoader.class.getClassLoader());
 	}
 
@@ -17,7 +17,7 @@ public class HotSwapClassLoader extends ClassLoader {
 	 * @param classBytes
 	 * @return
 	 */
-	public Class<?> loadClass(byte[] classBytes) {
+	public Class<?> loadBytes(byte[] classBytes) {
 		return defineClass(null, classBytes, 0, classBytes.length);
 	}
 
